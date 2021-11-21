@@ -10,9 +10,14 @@ var charsFixed = [" ", "&lt;", "&gt;", "&apos;", "&quot;"];
 
 // Display quote and paste most recent quote entry in text boxes.
 window.onload = function() {
+    var location = window.location + "";
     o = new Object();
-    saveInput();
-    displayQuote();
+
+    // Display preview if there is user entry.
+    if (location.indexOf("?") != -1) {
+        saveInput();
+        displayQuote();   
+    }
 }
 
 // Add the user entry to the website URL and refresh page.
