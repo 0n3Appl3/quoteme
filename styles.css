@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+#wrapper {
+    max-width: 1000px;
+    margin: auto;
+    padding: 1rem 0;
+}
+
+#quoteText, #personText {
+    text-transform: uppercase;
+}
+
+#quoteText {
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    line-height: 3rem;
+}
+
+#personText {
+    letter-spacing: 0.2rem;
+    margin-top: 1rem;
+}
+
+#quote, #person {
+    width: 90%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+html {
+    background-color: #ddd;
+    background-image: linear-gradient(#fff, #ddd);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+section {
+    width: 65%;
+    margin: auto;
+    padding: 5rem;
+    background-color: #ddd;
+}
+
+footer {
+    margin-top: 5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1.5rem;
+}
+
+#quote, #person, input[type=button] {
+    border: #777 1px solid;
+}
+
+input[type=button] {
+    background-color: #eee;
+    padding: 0.5rem 0.8rem;
+    margin: 0.2rem 0.3rem;
+    transition: 0.1s;
+}
+
+input[type=button]:hover {
+    background-color: #ccc;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+@media screen and (max-width: 1000px) {
+    section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #quoteText {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    section {
+        padding: 3rem;
+    }
+}

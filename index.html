@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quote Me - A Simple Tool for Visualising Quotes</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Jedd Lupoy">
+	    <meta name="description" content="Quote Me is a simple quote maker for your swift funny moment documentation.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta property="og:url" content="https://jeddlupoy.com/quoteme/"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Quote Me - A Simple Tool for Visualising Quotes"/>
+        <meta property="og:description" content="Quote Me is a simple quote maker for your swift funny moment documentation."/>
+        <meta property="og:image" content="https://jeddlupoy.com/quoteme/images/cover.png"/>
+        <meta property="article:author" content="Jedd Lupoy"/>
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@real0n3Appl3">
+        <meta name="twitter:creator" content="@real0n3Appl3">
+        <meta name="twitter:title" content="Quote Me - A Simple Tool for Visualising Quotes">
+        <meta name="twitter:description" content="Quote Me is a simple quote maker for your swift funny moment documentation.">
+        <meta name="twitter:image" content="https://jeddlupoy.com/quoteme/images/cover.png">
+
+        <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" type="image/png" href="images/favicon.gif">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+        <script src="https://unpkg.com/scrollreveal@4"></script>
+        <script src="./script.js"></script>
+        <script src="./html2canvas.js"></script>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <header>
+                <img src="images/icons8-bubble-96.png" alt="Bubble Icon">
+                <h1>Quote Me</h1>
+                <input id="quote" type="text" value="" placeholder="Enter the quote (e.g. Oh no what's happening)" required>
+                <input id="person" type="text" value="" placeholder="Enter name (e.g. 0n3Appl3)" required>
+                <br>
+                <input type="button" value="Submit" onclick="submitInput();">
+                <input type="button" value="Download Image" onclick="download();">
+            </header>
+
+            <section id="canvas">
+                <h2 id="quoteText"></h2>
+                <p id="personText"></p>
+            </section>
+
+            <footer>
+                <p>Designed and Built by Jedd Lupoy</p>
+            </footer>
+        </div>
+
+        <script src="reveal.js"></script>
+    </body>
+</html>
