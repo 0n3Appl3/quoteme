@@ -1,16 +1,16 @@
-var quoteParam = "quote";
-var personParam = "person";
-var o;
+let quoteParam = "quote";
+let personParam = "person";
+let o;
 
 // Different background colours.
-var colours = ["#85FFC7", "#F9E383", "#F8A692", "#77B5FB", "#ADBBFF", "#ADF092", "#DDDCEB"];
+let colours = ["#85FFC7", "#F9E383", "#F8A692", "#77B5FB", "#ADBBFF", "#ADF092", "#DDDCEB"];
 // Special characters that are used to be decoded.
-var chars = ["%20", "%3C", "%3E", "%27", "%22"];
-var charsFixed = [" ", "&lt;", "&gt;", "&apos;", "&quot;"];
+let chars = ["%20", "%3C", "%3E", "%27", "%22"];
+let charsFixed = [" ", "&lt;", "&gt;", "&apos;", "&quot;"];
 
 // Display quote and paste most recent quote entry in text boxes.
 window.onload = function() {
-    var location = window.location + "";
+    let location = window.location + "";
     o = new Object();
 
     // Display preview if there is user entry.
@@ -22,11 +22,11 @@ window.onload = function() {
 
 // Add the user entry to the website URL and refresh page.
 function submitInput() {
-    var location = window.location + "";
-    var locParams = "";
+    let location = window.location + "";
+    let locParams = "";
 
-    var quote = document.getElementById(quoteParam);
-    var person = document.getElementById(personParam);
+    let quote = document.getElementById(quoteParam);
+    let person = document.getElementById(personParam);
 
     // Remove previous user entry.
     if (location.indexOf("?") != -1) {
@@ -39,18 +39,18 @@ function submitInput() {
 
 // Save the user entry to the associative array and display on the text boxes.
 function saveInput() {
-    var loc = window.location + "";
-    var parameters = loc.substring(loc.indexOf("?") + 1);
+    let loc = window.location + "";
+    let parameters = loc.substring(loc.indexOf("?") + 1);
     const parametersArray = parameters.split("&"); // Split different entries into the array.
-    var parameterValues = [];
+    let parameterValues = [];
 
-    var quote = document.getElementById(quoteParam);
-    var person = document.getElementById(personParam);
+    let quote = document.getElementById(quoteParam);
+    let person = document.getElementById(personParam);
 
-    for (var i = 0; i < parametersArray.length; i++) {
-        var index = parametersArray[i];
+    for (let i = 0; i < parametersArray.length; i++) {
+        let index = parametersArray[i];
         // Fix missing characters from the URL.
-        for (var j = 0; j < chars.length; j++) {
+        for (let j = 0; j < chars.length; j++) {
             index = index.replaceAll(chars[j], charsFixed[j]);
         }
         // Add cleaned data into the array.
@@ -66,11 +66,11 @@ function saveInput() {
 
 // Display quote information on the quote preview.
 function displayQuote() {
-    var background = document.getElementById("canvas");
-    var quoteText = document.getElementById(quoteParam + "Text");
-    var personText = document.getElementById(personParam + "Text");
+    let background = document.getElementById("canvas");
+    let quoteText = document.getElementById(quoteParam + "Text");
+    let personText = document.getElementById(personParam + "Text");
     // Pick a random background colour.
-    var colourIndex = Math.floor(Math.random() * colours.length);
+    let colourIndex = Math.floor(Math.random() * colours.length);
 
     // Update the quote preview.
     canvas.style.backgroundColor = colours[colourIndex];
@@ -86,7 +86,7 @@ function download() {
 }
 
 function downloadURI(uri, name) {
-    var link = document.createElement("a");
+    let link = document.createElement("a");
 
     link.download = name;
     link.href = uri;
@@ -96,7 +96,7 @@ function downloadURI(uri, name) {
 
 // Decode HTML symbols.
 function decodeSymbols(text) {
-    var textarea = document.createElement("textarea");
+    let textarea = document.createElement("textarea");
     textarea.innerHTML = text;
     return textarea.value;
 }
