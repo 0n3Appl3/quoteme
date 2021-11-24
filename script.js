@@ -4,9 +4,6 @@ let o;
 
 // Different background colours.
 let colours = ["#85FFC7", "#F9E383", "#F8A692", "#77B5FB", "#ADBBFF", "#ADF092", "#DDDCEB"];
-// Special characters that are used to be decoded.
-let chars = ["%20", "%3C", "%3E", "%27", "%22"];
-let charsFixed = [" ", "&lt;", "&gt;", "&apos;", "&quot;"];
 
 // Display quote and paste most recent quote entry in text boxes.
 window.onload = function() {
@@ -50,9 +47,7 @@ function saveInput() {
     for (let i = 0; i < parametersArray.length; i++) {
         let index = parametersArray[i];
         // Fix missing characters from the URL.
-        for (let j = 0; j < chars.length; j++) {
-            index = index.replaceAll(chars[j], charsFixed[j]);
-        }
+        index = decodeURI(index);
         // Add cleaned data into the array.
         parameterValues.push(index.substring(index.indexOf("=") + 1));
     }
@@ -60,8 +55,8 @@ function saveInput() {
     o[quoteParam] = parameterValues[0];
     o[personParam] = parameterValues[1];   
     // Add entry to the text boxes.
-    quote.value = decodeSymbols(parameterValues[0]);
-    person.value = decodeSymbols(parameterValues[1]);
+    quote.value = parameterValues[0];
+    person.value = parameterValues[1];
 }
 
 // Display quote information on the quote preview.
@@ -92,11 +87,4 @@ function downloadURI(uri, name) {
     link.href = uri;
     document.body.appendChild(link);
     link.click();
-}
-
-// Decode HTML symbols.
-function decodeSymbols(text) {
-    let textarea = document.createElement("textarea");
-    textarea.innerHTML = text;
-    return textarea.value;
 }
