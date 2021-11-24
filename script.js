@@ -2,8 +2,8 @@ let quoteParam = "quote";
 let personParam = "person";
 let o;
 
-// Different background colours.
-let colours = ["#85FFC7", "#F9E383", "#F8A692", "#77B5FB", "#ADBBFF", "#ADF092", "#DDDCEB"];
+// Different background colours. (index 7+ are dark theme colours)
+let colours = ["#85FFC7", "#F9E383", "#F8A692", "#77B5FB", "#ADBBFF", "#ADF092", "#DDDCEB", "#1D468F", "#2CABA7", "#DC3A34", "#9464C0", "#323031", "#EE8D1E"];
 
 // Display quote and paste most recent quote entry in text boxes.
 window.onload = function() {
@@ -68,6 +68,13 @@ function displayQuote() {
     let colourIndex = Math.floor(Math.random() * colours.length);
 
     // Update the quote preview.
+    if (colourIndex >= 7) {
+        quoteText.style.color = "white";
+        personText.style.color = "white";
+    } else {
+        quoteText.style.color = "black";
+        personText.style.color = "black";
+    }
     canvas.style.backgroundColor = colours[colourIndex];
     quoteText.innerHTML = o[quoteParam];
     personText.innerHTML = o[personParam];
