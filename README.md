@@ -5,4 +5,4 @@ A simple quote maker for your swift funny moment documentation.
 
 
 ###### This is just a side project.
-###### Copyright © 2021 Jedd Lupoy (0n3Appl3)
+###### Property of Jedd Lupoy (0n3Appl3)
